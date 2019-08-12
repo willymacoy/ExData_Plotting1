@@ -5,8 +5,15 @@ dataFilesUrl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold
 dataFolder <- 'data'
 dataZip <- paste(dataFolder, "household_power_consumption.zip", sep = '/')
 dataFile = paste(dataFolder, "household_power_consumption.txt", sep = '/')
-plotFolder = 'figure' 
-plotFile = paste(plotFolder, "plot1.png", sep = '/')
+plotFolder = 'plots' 
+
+if (! dir.exists(dataFolder)) {
+	dir.create(dataFolder)
+}
+
+if (! dir.exists(plotFolder)) {
+	dir.create(plotFolder)
+}
 
 # download and unzip data files
 if (!file.exists(dataZip)) {
